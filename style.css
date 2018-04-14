@@ -5,3 +5,10 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
+.name {
+    margin-bottom: 5px;
+}
+.Canvas-Wrapper {
+    border: 1px solid #444;
+}

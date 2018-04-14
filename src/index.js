@@ -1,4 +1,7 @@
-console.log('readed');
 import BubbleSort from './bubbleSort';
 
-console.log(BubbleSort);
+let fakeArray = ["a", 1, "b", true, 34];
+
+window.onload = ()=> {
+    let bubble = new BubbleSort();
+}

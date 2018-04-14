@@ -1,45 +1,67 @@
 "use strict";
 
 export default class BubbleSort {
-  constructor(array = [], requestAnimationCallback) {
-    this.array = this.cleanArray(array);
-    this.requestAnimationCallback = requestAnimationCallback || console.log('request animation');
+  constructor(options = {}) {
+    this.array = options.array
+      ? this.cleanArray(array)
+      : this.generateRandomArray();
+    this.requestAnimationCallback = options.requestAnimationCallback;
 
     this.loopOver();
   }
 
-  cleanArray (array) {
-    array.filter(number => typeof number === "number")
+  cleanArray(array) {
+    return array.filter(number => typeof number === "number");
   }
 
-  loopOver (){
+  loopOver() {
     const { array } = this;
-    let swapped = false;
+    let swapped = true;
 
-    for (let i in array) {
-      if(array[i] > array[i+1]) {
-          this.swapPositions(i, i+1);
-          this.requestAnimationCallback();
+    while (swapped) {
+      swapped = false;
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] > array[i + 1]) {
+          this.swapPositions(i);
+          this.callAnimation(array);
           swapped = true;
+        }
       }
     }
-    if (swapped) this.loopOver();
-  };
-
-  swapPositions (posAnterior, posPosterior) {
-    const { array } = this.array;
-    let temp = array[posAnterior];
-    array[posAnterior] = array[posPosterior];
-    array[posPosterior] = array;
   }
-  
-  isOrdered () {
-    const { array } = this.array;
-    for (let i in array) {
-        if(i != array.lentgh && array[i] > array[i + 1]) return false
+
+  swapPositions(posAnterior) {
+    const { array } = this;
+    let temp = array[posAnterior];
+    array[posAnterior] = array[posAnterior + 1];
+    array[posAnterior + 1] = temp;
+  }
+
+  callAnimation(array) {
+    if (this.requestAnimationCallback === undefined) {
+    } else {
+      this.requestAnimationCallback(array);
     }
-    return true
+  }
+
+  isLastPosition(pos) {
+    const { array } = this;
+    return pos === array.length - 1;
+  }
+
+  isOrdered() {
+    const { array } = this;
+    for (let i in array) {
+      if (i != array.lentgh && array[i] > array[i + 1]) return false;
+    }
+    return true;
+  }
+
+  generateRandomArray() {
+    let newArr = [];
+    for (let i = 0; i < 100; i++) {
+      newArr.push(Math.floor(Math.random() * 1000 + 1));
+    }
+    return newArr;
   }
 }
-
-let fakeArray = ["a", 1, "b", true, 34];
