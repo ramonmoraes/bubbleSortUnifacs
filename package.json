@@ -1,0 +1,21 @@
+import webpack from 'webpack';
+{
+  "name": "bubble-sort-unifacs-ramonmoraes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server",
+    "build": "webpack -p"
+  },
+  "author": "Ramon Moraes @github/ramonmoraes",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "4.5.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "2.0.14",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
