@@ -8,13 +8,15 @@ export default class BubbleSort {
     this.loopOver();
   }
 
-  cleanArray = array => array.filter(number => typeof number === "number");
+  cleanArray (array) {
+    array.filter(number => typeof number === "number")
+  }
 
-  loopOver = () => {
-    const { array } = this.array;
+  loopOver (){
+    const { array } = this;
     let swapped = false;
 
-    for (let i = 0 in array) {
+    for (let i in array) {
       if(array[i] > array[i+1]) {
           this.swapPositions(i, i+1);
           this.requestAnimationCallback();
@@ -24,14 +26,14 @@ export default class BubbleSort {
     if (swapped) this.loopOver();
   };
 
-  swapPositions = (posAnterior, posPosterior) => {
+  swapPositions (posAnterior, posPosterior) {
     const { array } = this.array;
     let temp = array[posAnterior];
     array[posAnterior] = array[posPosterior];
     array[posPosterior] = array;
   }
   
-  isOrdered = () => {
+  isOrdered () {
     const { array } = this.array;
     for (let i in array) {
         if(i != array.lentgh && array[i] > array[i + 1]) return false
@@ -41,4 +43,3 @@ export default class BubbleSort {
 }
 
 let fakeArray = ["a", 1, "b", true, 34];
-let bubbleSort = new BubbleSort(fakeArray);
