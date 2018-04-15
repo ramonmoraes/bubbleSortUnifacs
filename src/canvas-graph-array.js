@@ -1,6 +1,4 @@
-import { start } from "pretty-error";
-
-("use strict");
+"use strict"
 
 export default class CanvasGraphArray {
   constructor(options = {}) {
