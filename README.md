@@ -1,4 +1,4 @@
 # Algoritmo BubbleSort
-### BubbleSort Overkill
+### ou (BubbleSort Overkill)
 
 [Imagem meramente ilustrativa(./matandoFormiga.jpg)]
