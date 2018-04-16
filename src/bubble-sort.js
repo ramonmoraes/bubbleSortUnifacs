@@ -5,7 +5,6 @@ export default class BubbleSort {
     this.array = this.cleanArray(options.array);
     this.requestAnimationCallback = options.requestAnimationCallback;
     this.continuousLoop();
-    console.log(this.array);
   }
 
   cleanArray(array = []) {
@@ -24,16 +23,20 @@ export default class BubbleSort {
             swapped = true;
           }
         }
-        swapped ? resolve(swapped) : reject(swapped);
+        swapped ? resolve() : reject();
       }, 15);
     });
   }
 
   async continuousLoop() {
     let swapped = true;
-    while(swapped) {
-      swapped = this.loopOver();
-      await swapped;
+    while (swapped) {
+      try {
+        await this.loopOver();
+      } catch(err) {
+        swapped = false;
+        console.log(this.array);
+      }
     }
   }
 
