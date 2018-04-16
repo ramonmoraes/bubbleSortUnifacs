@@ -2,9 +2,10 @@
 
 export default class BubbleSort {
   constructor(options = {}) {
-    this.array = this.cleanArray(options.array)
+    this.array = this.cleanArray(options.array);
     this.requestAnimationCallback = options.requestAnimationCallback;
-    this.loopOver();
+    this.continuousLoop();
+    console.log(this.array);
   }
 
   cleanArray(array = []) {
@@ -12,18 +13,27 @@ export default class BubbleSort {
   }
 
   loopOver() {
-    const { array } = this;
-    let swapped = true;
-
-    while (swapped) {
-      swapped = false;
-      for (let i = 0; i < array.length; i++) {
-        if (array[i] > array[i + 1]) {
-          this.swapPositions(i);
-          this.callAnimation(array);
-          swapped = true;
+    return new Promise((resolve, reject) => {
+      const { array } = this;
+      let swapped = false;
+      setTimeout(() => {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] > array[i + 1]) {
+            this.swapPositions(i);
+            this.callAnimation(array);
+            swapped = true;
+          }
         }
-      }
+        swapped ? resolve(swapped) : reject(swapped);
+      }, 15);
+    });
+  }
+
+  async continuousLoop() {
+    let swapped = true;
+    while(swapped) {
+      swapped = this.loopOver();
+      await swapped;
     }
   }
 
@@ -35,8 +45,7 @@ export default class BubbleSort {
   }
 
   callAnimation(array) {
-    if (this.requestAnimationCallback === undefined) {
-    } else {
+    if (this.requestAnimationCallback) {
       this.requestAnimationCallback(array);
     }
   }

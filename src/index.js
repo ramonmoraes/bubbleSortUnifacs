@@ -1,7 +1,7 @@
 import BubbleSort from "./bubble-sort";
 import CanvasGraphArray from "./canvas-graph-array";
 
-const createArray = (arrayLength = 100) => {
+const createArray = (arrayLength = 150) => {
   let newArr = [];
   for (let i = 0; i < arrayLength; i++) {
     newArr.push(Math.floor(Math.random() * 1000 + 1));
@@ -11,12 +11,20 @@ const createArray = (arrayLength = 100) => {
 
 window.onload = () => {
   const array = createArray();
-  let bubble = new BubbleSort({ array });
-  let canvas = new CanvasGraphArray({
+  const canvas = new CanvasGraphArray({
     wrapper: document.querySelector(".Canvas-Wrapper"),
     array
   });
+  
+  const requestAnimationCallback = (arg) => {
+    canvas.drawArray(arg);
+  };
+
+  new BubbleSort({
+    requestAnimationCallback,
+    array 
+    });
 
   // canvas.drawLine(25, 100);
-  canvas.drawArray(arr);
+  canvas.drawArray(array);
 };

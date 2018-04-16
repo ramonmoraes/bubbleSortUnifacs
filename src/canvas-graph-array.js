@@ -6,7 +6,7 @@ export default class CanvasGraphArray {
 
     this.canvas = document.createElement("canvas");
     this.ctx = this.canvas.getContext("2d");
-    this.baseArray = options.baseArray;
+    this.array = options.array;
 
     this.setUpCanvas();
     this.setSpaceBetweenLines();
@@ -22,28 +22,31 @@ export default class CanvasGraphArray {
   }
 
   setSpaceBetweenLines() {
-    const { canvas } = this;
-    this.spaceBetween = (canvas.clientWidth - 20) / this.baseArray.length;
+    const { canvas, array } = this;
+    this.spaceBetween = (canvas.clientWidth - 20) / array.length;
   }
 
   setHeightPercent() {
-    const { canvas } = this;
-    const max = Math.max(... this.baseArray);
+    const { canvas, array } = this;
+    const max = Math.max(... array);
     this.heightPercent = max / canvas.clientHeight;
   }
 
   drawArray(array) {
-    let posX = 5;
-
-    this.clearCanvas();
-    array.forEach(number => {
-      this.drawLine(posX, number / this.heightPercent);
-      posX += this.spaceBetween;
+    return new Promise((resolve, reject) => {
+      const { heightPercent, spaceBetween } = this;
+      let posX = 5;
+      this.clearCanvas();
+      array.forEach(number => {
+        this.drawLine(posX, number / heightPercent);
+        posX += spaceBetween;
+      });
     });
   }
 
   clearCanvas() {
-    this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
+    const { ctx } = this;
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   }
 
   drawLine(xPos, height) {
