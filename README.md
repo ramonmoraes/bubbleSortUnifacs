@@ -1,4 +1,5 @@
 # Algoritmo BubbleSort
 ### ou (BubbleSort Overkill)
 
-[Imagem meramente ilustrativa(./matandoFormiga.jpg)]
+<img src="./matandoFormiga.png" style="width:auto;height:auto"/>
+*imagem meramente ilustrativa
