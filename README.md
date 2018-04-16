@@ -1,4 +1,4 @@
 # Algoritmo BubbleSort
 ### BubbleSort Overkill
 
-[!imagemMeramenteIlustrativa](matandoFormiga.jpg)
+[!imagemMeramenteIlustrativa](./matandoFormiga.jpg)
