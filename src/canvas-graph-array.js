@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 export default class CanvasGraphArray {
   constructor(options = {}) {
@@ -28,7 +28,7 @@ export default class CanvasGraphArray {
 
   setHeightPercent() {
     const { canvas, array } = this;
-    const max = Math.max(... array);
+    const max = Math.max(...array);
     this.heightPercent = max / canvas.clientHeight;
   }
 
