@@ -2,15 +2,12 @@
 
 export default class BubbleSort {
   constructor(options = {}) {
-    this.array = options.array
-      ? this.cleanArray(array)
-      : this.generateRandomArray();
+    this.array = this.cleanArray(options.array)
     this.requestAnimationCallback = options.requestAnimationCallback;
-
     this.loopOver();
   }
 
-  cleanArray(array) {
+  cleanArray(array = []) {
     return array.filter(number => typeof number === "number");
   }
 
@@ -55,13 +52,5 @@ export default class BubbleSort {
       if (i != array.lentgh && array[i] > array[i + 1]) return false;
     }
     return true;
-  }
-
-  generateRandomArray() {
-    let newArr = [];
-    for (let i = 0; i < 100; i++) {
-      newArr.push(Math.floor(Math.random() * 1000 + 1));
-    }
-    return newArr;
   }
 }

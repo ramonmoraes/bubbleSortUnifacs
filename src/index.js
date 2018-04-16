@@ -1,15 +1,22 @@
-import BubbleSort from './bubble-sort';
-import CanvasGraphArray from './canvas-graph-array';
+import BubbleSort from "./bubble-sort";
+import CanvasGraphArray from "./canvas-graph-array";
 
-let arr = [1,2,3,4,5];
+const createArray = (arrayLength = 100) => {
+  let newArr = [];
+  for (let i = 0; i < arrayLength; i++) {
+    newArr.push(Math.floor(Math.random() * 1000 + 1));
+  }
+  return newArr;
+};
 
-window.onload = ()=> {
-    let bubble = new BubbleSort();
-    let canvas = new CanvasGraphArray({
-        wrapper: document.querySelector('.Canvas-Wrapper'),
-        baseArray: arr,
-    });
+window.onload = () => {
+  const array = createArray();
+  let bubble = new BubbleSort({ array });
+  let canvas = new CanvasGraphArray({
+    wrapper: document.querySelector(".Canvas-Wrapper"),
+    array
+  });
 
-    // canvas.drawLine(25, 100);
-    canvas.drawArray(arr);
-}
+  // canvas.drawLine(25, 100);
+  canvas.drawArray(arr);
+};
