@@ -15,6 +15,7 @@ export default class CanvasGraphArray {
 
   setUpCanvas() {
     const { wrapper, canvas } = this;
+    wrapper.innerHTML = "";
     canvas.id = "canvas";
     canvas.height = wrapper.clientHeight;
     canvas.width = wrapper.clientWidth;

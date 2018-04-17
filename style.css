@@ -1,16 +1,46 @@
 body {
-    font-family: 'Open Sans', 'Helvetica';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  font-family: "Oswald", "Helvetica";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  color: #111;
 }
 
-.name {
+.equipe {
+    margin-bottom: 15px;
+} .equipe
+     h2 {
     margin-bottom: 5px;
 }
+
+.Canvas-Start{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding: 15px;
+} .Canvas-Start 
+    input {
+        border: 1px solid #444;
+        padding: 4px;
+        margin: 5px auto;
+        max-width: 50px;
+        text-align: center; 
+    }.Canvas-Start 
+    button {
+        border: 1px solid #444;
+        padding: 10px;
+        margin: 5px auto;
+    }
+
 .Canvas-Wrapper {
-    border: 1px solid #444;
+    height: 600px;
+    padding:0 10px;
     width: 80vw;
-    height: 500px;
+}
+
+.component {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
 }

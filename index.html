@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel='stylesheet' href='style.css'/>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel='stylesheet' href='style.css' />
     <title>Document</title>
 </head>
+
 <body>
     <h1>Vizualização Bubble Sort</h1>
-    <div>
-        <h2 class="name"><a target="_blank" href="http://www.github.com/ramonmoraes"> Ramon Moraes </a></h2>
-        <h2 class="name"><a target="_blank" href="http://www.github.com/ramonmoraes"> Henrique </a></h2>
+    <div class="equipe">
+        <h2> Ramon e Henrique</h2>
     </div>
-    
-    <div class="Canvas-Wrapper">
+    <div class="Canvas-Start component">
+        <label for="canvas-input">Selecione a quantidade de numeros do array</label>
+        <input type="number" value="200" placeholder="200" id="canvas-input" />
+        <button id="canvas-init-button"> Ordene! </button>
     </div>
-    <code>
 
-    </code>
+    <div class="Canvas-Wrapper component"></div>
+    <h2>Codigo</h2>
+    <a target="_blank" href="https://github.com/ramonmoraes/bubbleSortUnifacs/blob/master/src/index.js">Main() *</a>
+    <a target="_blank" href="https://github.com/ramonmoraes/bubbleSortUnifacs/blob/master/src/bubble-sort.js"> Classe Bubble Sort</a>
+    <a target="_blank" href="https://github.com/ramonmoraes/bubbleSortUnifacs/blob/master/src/bubble-sort.js"> Class Canvas</a>
 </body>
+
 </html>
