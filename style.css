@@ -9,38 +9,38 @@ body {
 }
 
 .equipe {
-    margin-bottom: 15px;
-} .equipe
-     h2 {
-    margin-bottom: 5px;
+  margin-bottom: 15px;
+}
+.equipe h2 {
+  margin-bottom: 5px;
 }
 
-.Canvas-Start{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    padding: 15px;
-} .Canvas-Start 
-    input {
-        border: 1px solid #444;
-        padding: 4px;
-        margin: 5px auto;
-        max-width: 50px;
-        text-align: center; 
-    }.Canvas-Start 
-    button {
-        border: 1px solid #444;
-        padding: 10px;
-        margin: 5px auto;
-    }
+.canvas-start {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+.canvas-start input {
+  border: 1px solid #444;
+  padding: 4px;
+  margin: 5px auto;
+  max-width: 50px;
+  text-align: center;
+}
+.canvas-start button {
+  border: 1px solid #444;
+  padding: 10px;
+  margin: 5px auto;
+}
 
-.Canvas-Wrapper {
-    height: 600px;
-    padding:0 10px;
-    width: 80vw;
+.canvas-wrapper {
+  height: 600px;
+  padding: 0 10px;
+  width: 80vw;
 }
 
 .component {
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
 }

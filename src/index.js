@@ -17,7 +17,7 @@ window.onload = () => {
     const array = createArray(numbersInArray);
     console.log(array);
     const canvas = new CanvasGraphArray({
-      wrapper: document.querySelector(".Canvas-Wrapper"),
+      wrapper: document.querySelector(".canvas-wrapper"),
       array
     });
 
