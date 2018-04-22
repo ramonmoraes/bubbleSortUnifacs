@@ -52,17 +52,4 @@ export default class BubbleSort {
       this.requestAnimationCallback(array);
     }
   }
-
-  isLastPosition(pos) {
-    const { array } = this;
-    return pos === array.length - 1;
-  }
-
-  isOrdered() {
-    const { array } = this;
-    for (let i in array) {
-      if (i != array.lentgh && array[i] > array[i + 1]) return false;
-    }
-    return true;
-  }
 }
